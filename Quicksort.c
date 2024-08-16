@@ -31,7 +31,8 @@ void cadastro(Produtos *produtos, int *numProdutos) {
 int particiona(int estquerda, int direita, Produtos *produtos){
     Produtos pivo = produtos[direita];
     int b = -1;
-    for(int a = estquerda; a < direita; a++){
+    int a;
+    for(a = estquerda; a < direita; a++){
         if(strcmp(produtos[a].nome, pivo.nome) < 0){
             b++;
             Produtos temp = produtos[b];
@@ -47,8 +48,9 @@ int particiona(int estquerda, int direita, Produtos *produtos){
 }
 
 void imprime(Produtos *produtos, int numProdutos) {  
+    int i;
     printf("\nProduto Ordenados\n");
-    for(int i = 0; i < numProdutos; i++){
+    for(i = 0; i < numProdutos; i++){
         printf("Nome: %s\nCódigo: %d\nPreço: %.2f\n", produtos[i].nome, produtos[i].codigo, produtos[i].preco); 
     }
 }  
